@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --Lightgraycyan: hsl(185, 41%, 84%);
+}
+
+body{
+    background-color: var(--Lightgraycyan);
+}
