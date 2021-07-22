@@ -1,10 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 *{
     box-sizing: border-box;
 }
 :root{
     --Lightgraycyan: hsl(185, 41%, 84%);
+    --strongcyan: hsl(172, 67%, 45%);
+    --darkgracyan: hsl(186, 14%, 43%);
+    --strongcyan2: #00494D;
+    --white: hsl(0, 0%, 100%);
+    --poppins: 'Poppins', sans-serif;
 }
 
 body{
     background-color: var(--Lightgraycyan);
+    font-family: var(--poppins);
+}
+
+.container{
+    max-width: 1000px;
+    height: fit-content;
+}
+header{
+    margin-top: 100px;
+    text-align: center;
+}
+header p{
+    color: var(--darkgracyan);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+}
+.card{
+    background-color: var(--white);
+    max-width: 70%;
+    margin: auto;
+    border-radius: 20px;
+}
+.inputGuess input{
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.warning-section{
+    display: block;
+    margin-top: -10px;
+    
+}
+
+.display{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 25px;
+    background-color: var(--strongcyan);
+    color: var(--strongcyan2);
+}
+.display h4{
+    text-align: center;
+    font-size: 22px;
+    margin: 25px auto;
+}
+
+
+.custom-btn{
+    border: none;
+    background-color: #00494D;
+    color: var(--white);
+    padding: 47px 20px;
+    border-radius: 50%;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 5px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.custom-btn:hover{
+    color: var(--white);
+    background-color: #007272;
 }
