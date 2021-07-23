@@ -38,6 +38,7 @@ header p{
     margin: auto;
     border-radius: 20px;
 }
+
 .inputGuess input{
     text-align: center;
     padding: 15px;
@@ -46,7 +47,7 @@ header p{
 }
 .warning-section{
     display: inline-block;
-    /* margin-top: -10px; */
+    /* margin-bottom: 20px; */
     
 }
 
@@ -56,6 +57,7 @@ header p{
     padding: 10px 25px;
     background-color: var(--strongcyan);
     color: var(--strongcyan2);
+    margin-bottom: 20px;
 }
 .display h4{
     text-align: center;
@@ -76,8 +78,46 @@ header p{
     letter-spacing: 5px;
     font-size: 18px;
     transition: 0.2s;
+    margin-bottom: 20px;
 }
 .custom-btn:hover{
     color: var(--white);
     background-color: #007272;
+}
+
+.list ul li{
+    font-size: 14px;
+}
+
+/* -----------Responsive for Mobile----------- */
+
+@media screen and (max-width: 850px) {
+    .display h4{
+        font-size: 18px;
+    }
+    .display p{
+        font-size: 14px;
+    }
+    .list ul li{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .display h4{
+        font-size: 15px;
+    }
+    .display p{
+        font-size: 12px;
+    }
+    header p{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    header p{
+        font-size: 14px;
+    }
+    
 }

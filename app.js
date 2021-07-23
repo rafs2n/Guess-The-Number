@@ -8,6 +8,7 @@ const guessBtn = document.getElementById('guess-btn');
 const warningSection = document.getElementById('warning-section');
 const warningMsg = document.getElementById('warning-msg');
 
+inputGuess.focus();
 displayTwo.innerText = "I've select a number, Can you guess it ?";
 
 function getRandom(num) {
@@ -15,11 +16,12 @@ function getRandom(num) {
     return randomNum;
 }
 
-let randomNumber = getRandom(4);
+// let randomNumber = getRandom(9);
 let counter = 1;
 let maxCounter = 2;
 
 function guessCheck() {
+    let randomNumber = getRandom(9);
     let userGuess = parseInt(inputGuess.value);
     if (counter === 1 && maxCounter === 2) {
         showGuesses.innerText = "Your Guesses: ";
@@ -58,9 +60,14 @@ function gameOver() {
 
 // guessBtn.addEventListener('click', guessCheck);
 guessBtn.addEventListener('click', function () {
-    displayTwo.innerText = '';
+    inputGuess.focus();
+    inputGuess.style.marginBottom = '20px';
+    warningSection.style.marginTop = '-15px';
+
+    // let randomNumber = getRandom(9);
     let userGuess = parseInt(inputGuess.value);
-    if (userGuess != 0 && userGuess != '' && userGuess < 6) {
+    if (userGuess != 0 && userGuess != '' && userGuess < 11) {
+        displayTwo.innerText = '';
         warningSection.style.display = 'none';
         guessCheck();
     }
