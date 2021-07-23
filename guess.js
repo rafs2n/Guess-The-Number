@@ -8,9 +8,7 @@ const guessBtn = document.getElementById('guess-btn');
 const warningSection = document.getElementById('warning-section');
 const warningMsg = document.getElementById('warning-msg');
 
-
-// console.log(randomNumber);
-// warningSection.style.display = 'none';
+displayTwo.innerText = "I've select a number, Can you guess it ?";
 
 function getRandom(num) {
     let randomNum = Math.round(Math.random() * num + 1);
@@ -19,33 +17,35 @@ function getRandom(num) {
 
 let randomNumber = getRandom(4);
 let counter = 1;
-let maxCounter = 3;
+let maxCounter = 2;
 
 function guessCheck() {
     let userGuess = parseInt(inputGuess.value);
-    if (counter === 1) {
+    if (counter === 1 && maxCounter === 2) {
         showGuesses.innerText = "Your Guesses: ";
     }
     showGuesses.innerText += " " + userGuess;
-    tryCount.innerText = `Tries: ${counter}`;
+    tryCount.innerText = `${maxCounter} Left`;
 
     if (userGuess === randomNumber) {
-        display.innerText = "Good Job. You Win";
-        displayTwo.innerText = `It took only ${counter} tries`;
+        display.innerText = "Good Job. You Guessed it Correctly";
+        displayTwo.innerText = `It took only ${counter} tries. Press F5 to Play Again`;
         gameOver();
-    } else if (counter >= maxCounter) {
-        display.innerText = "Game Over. You Loss!"
+    } else if (counter >= 3 && maxCounter <= 0) {
+        display.innerText = "Game Over. You Lose!";
+        displayTwo.innerText = `You've reached your limit. Press F5 to Play Again`;
         gameOver();
     } else {
-        display.innerText = "Try Again. The number was- ", randomNumber;
+        // display.innerText = "Try Again. The number was- ", randomNumber;
         if (userGuess < randomNumber) {
-            display.innerText = "Try a higher number";
+            display.innerText = `Try a higher number. The number was ${randomNumber}`;
         } else if (userGuess > randomNumber) {
-            display.innerText = "Try a lower number";
+            display.innerText = `Try a lower number. The number was ${randomNumber}`;
         }
     }
 
     counter++;
+    maxCounter--;
     inputGuess.value = '';
     inputGuess.focus();
 }
@@ -58,6 +58,7 @@ function gameOver() {
 
 // guessBtn.addEventListener('click', guessCheck);
 guessBtn.addEventListener('click', function () {
+    displayTwo.innerText = '';
     let userGuess = parseInt(inputGuess.value);
     if (userGuess != 0 && userGuess != '' && userGuess < 6) {
         warningSection.style.display = 'none';
