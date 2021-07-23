@@ -45,8 +45,8 @@ header p{
     border-radius: 5px;
 }
 .warning-section{
-    display: block;
-    margin-top: -10px;
+    display: inline-block;
+    /* margin-top: -10px; */
     
 }
 
@@ -60,7 +60,7 @@ header p{
 .display h4{
     text-align: center;
     font-size: 22px;
-    margin: 25px auto;
+    margin-top: 30px;
 }
 
 

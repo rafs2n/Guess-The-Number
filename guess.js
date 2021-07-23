@@ -1,5 +1,6 @@
 
 const display = document.getElementById('display');
+const displayTwo = document.getElementById('display-two');
 const showGuesses = document.getElementById('show-guesses');
 const tryCount = document.getElementById('try-count');
 const inputGuess = document.getElementById('input-guess');
@@ -9,7 +10,7 @@ const warningMsg = document.getElementById('warning-msg');
 
 
 // console.log(randomNumber);
-warningSection.style.display = 'none';
+// warningSection.style.display = 'none';
 
 function getRandom(num) {
     let randomNum = Math.round(Math.random() * num + 1);
@@ -29,9 +30,10 @@ function guessCheck() {
     tryCount.innerText = `Tries: ${counter}`;
 
     if (userGuess === randomNumber) {
-        display.innerText = "Good Job. You Win!";
+        display.innerText = "Good Job. You Win";
+        displayTwo.innerText = `It took only ${counter} tries`;
         gameOver();
-    } else if (counter > maxCounter) {
+    } else if (counter >= maxCounter) {
         display.innerText = "Game Over. You Loss!"
         gameOver();
     } else {
@@ -44,17 +46,35 @@ function guessCheck() {
     }
 
     counter++;
-    maxCounter--;
     inputGuess.value = '';
     inputGuess.focus();
 }
-
-guessBtn.addEventListener('click', guessCheck);
-
 
 
 function gameOver() {
     inputGuess.disabled = true;
     guessBtn.disabled = true;
 }
+
+// guessBtn.addEventListener('click', guessCheck);
+guessBtn.addEventListener('click', function () {
+    let userGuess = parseInt(inputGuess.value);
+    if (userGuess != 0 && userGuess != '' && userGuess < 6) {
+        warningSection.style.display = 'none';
+        guessCheck();
+    }
+    else {
+        warningSection.style.display = 'block';
+        inputGuess.value = '';
+        warningMsg.innerText = 'That is not a valid number.';
+    }
+})
+
+
+
+
+
+
+
+
 
