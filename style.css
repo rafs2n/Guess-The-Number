@@ -34,7 +34,7 @@ header p{
 }
 .card{
     background-color: var(--white);
-    max-width: 70%;
+    max-width: 40%;
     margin: auto;
     border-radius: 20px;
 }
@@ -101,9 +101,12 @@ header p{
     .list ul li{
         font-size: 12px;
     }
+    .card{
+        max-width: 55%;
+    }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 600px) {
     .display h4{
         font-size: 15px;
     }
@@ -113,11 +116,15 @@ header p{
     header p{
         font-size: 20px;
     }
+    .card{
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 414px) {
     header p{
-        font-size: 14px;
+        font-size: 17px;
     }
     
 }
+
