@@ -89,6 +89,18 @@ header p{
     font-size: 14px;
 }
 
+footer{
+    padding: 40px;
+    font-size: 14px;
+}
+footer span{
+    color: purple;
+}
+#copyright{
+    text-decoration: none;
+    color: purple;
+}
+
 /* -----------Responsive for Mobile----------- */
 
 @media screen and (max-width: 850px) {
@@ -125,6 +137,5 @@ header p{
     header p{
         font-size: 17px;
     }
-    
 }
 
